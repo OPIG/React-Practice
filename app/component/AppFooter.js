@@ -11,6 +11,20 @@ var styles={
 }
 
 class AppFooter extends React.Component{
+    handleAll(){
+        let all = this.refs.all.value;
+        this.props.SubmitChooseValue(all)
+    }
+    handleActive (){
+        let active = this.refs.active.value;
+        this.props.SubmitChooseValue(active)
+    }
+    handleComplete (){
+        let complete = this.refs.complete.value;
+        console.log(complete)
+        this.props.SubmitChooseValue(complete)
+    }
+
     render(){
         return (
             <div>
@@ -20,7 +34,9 @@ class AppFooter extends React.Component{
                     style={styles.top}
                     className='ui blue button'
                     value='1'
-                    ref='all'>
+                    ref='all'
+                    onClick={this.handleAll.bind(this)}
+                    >
                         全部
                 </button>
                 <button 
@@ -29,6 +45,7 @@ class AppFooter extends React.Component{
                     className='ui blue button' 
                     value='2' 
                     ref='active'
+                    onClick={this.handleActive.bind(this)}
                 > 
                     还未完成 
                 </button>
@@ -38,6 +55,7 @@ class AppFooter extends React.Component{
                     className='ui blue button' 
                     value='3' 
                     ref='complete'
+                    onClick={this.handleComplete.bind(this)}
                 > 
                     已完成 
                 </button>

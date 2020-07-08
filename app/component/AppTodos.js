@@ -13,6 +13,14 @@ var styles = {
 }
 
 class AppTodos extends React.Component {
+  handleChangeComplete (){
+    let newComplete = this.props;
+    this.props.ChangeCompleteItem(this.props.id)
+  }
+handleDelete(){
+  this.props.DeleteItem(this.props.id)
+}
+
   render () {
     return (
       <div className='comment'>
@@ -20,6 +28,7 @@ class AppTodos extends React.Component {
           <span 
                className='author' 
                 style={styles.title} 
+                onClick={this.handleChangeComplete.bind(this)}
           >
               {this.props.text}
               <span 
@@ -32,7 +41,9 @@ class AppTodos extends React.Component {
           </span>
           <span className='author'>{this.props.id}</span>
           <span className='ui blue button' 
-                style={styles.delete} >
+                style={styles.delete} 
+                onClick={this.handleDelete.bind(this)}
+                >
                 删除
           </span>  
         </div>
