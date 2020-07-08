@@ -1,4 +1,4 @@
- 
+ ```
    .
    +-- app                              // 开发的文件夹，组件放在这个文件夹中
    │   +-- components                   // 项目的组件
@@ -20,7 +20,7 @@
    +-- package.json                     // 当前整一个项目的依赖
    
 from : https://www.jianshu.com/p/211ecf8ed34e
-
+```
 
    首先安装Babel，Babel 是一个 JavaScript 编译器，他可以将es6或者es7的语法转化为浏览器能识别的javascript
    `npm install babel-cli babel-core --save-dev`
