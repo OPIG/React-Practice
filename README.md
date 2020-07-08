@@ -1,22 +1,24 @@
+ 
    .
-   ├── app                              // 开发的文件夹，组件放在这个文件夹中
-   │   ├── components                   // 项目的组件
-   │   │   ├── App.js                   // 最外层包含下面组件的总组件
-   │   │   ├── AppFooter.js             // App的三个筛选按钮的组件
-   │   │   ├── AppForm.js               // 添加list的form
-   │   │   ├── AppList.js               // 显示list数据的智能组件
-   │   │   └── AppTodos.js              // 显示list的木偶组件
-   ├── css                              // 放css文件的地方。
-   │   ├── semantic.css                 // 我们的文件用到了semantic.css,
-   ├── node_modules                     // 第三方的依赖
-   ├── .babelrc                         // babel配置文件
-   ├── .gitignore                       // git上传时忽略的文件
-   ├── bundle.js                        // webpack build之后的文件
-   ├── index.html                       // 项目的模版文件
-   ├── main.js                          // 项目的入口文件
-   ├── webpack.config.js                // webpack配置文件
-   ├── README.md                        // readme文件
-   └── package.json                     // 当前整一个项目的依赖
+   +-- app                              // 开发的文件夹，组件放在这个文件夹中
+   │   +-- components                   // 项目的组件
+   │       +-- App.js                   // 最外层包含下面组件的总组件
+   │   │   +-- AppFooter.js             // App的三个筛选按钮的组件
+   │   │   +-- AppForm.js               // 添加list的form
+   │   │   +-- AppList.js               // 显示list数据的智能组件
+   │   │   +-- AppTodos.js              // 显示list的木偶组件
+   +-- css                              // 放css文件的地方。
+   │   +-- semantic.css                 // 我们的文件用到了semantic.css,
+   +-- node_modules                     // 第三方的依赖
+   +-- .babelrc                         // babel配置文件
+   +-- .gitignore                       // git上传时忽略的文件
+   +-- bundle.js                        // webpack build之后的文件
+   +-- index.html                       // 项目的模版文件
+   +-- main.js                          // 项目的入口文件
+   +-- webpack.config.js                // webpack配置文件
+   +-- README.md                        // readme文件
+   +-- package.json                     // 当前整一个项目的依赖
+   
 from : https://www.jianshu.com/p/211ecf8ed34e
 
 
