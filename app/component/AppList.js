@@ -34,6 +34,7 @@ class AppList extends React.Component {
               text={text} 
               complete={complete} 
               ChangeCompleteItem={this.ChangeDone.bind(this)}
+              DeleteItem = {this.SubmitDelete.bind(this)}
           />
         ]
             
@@ -46,6 +47,7 @@ class AppList extends React.Component {
               text={text} 
               complete={complete} 
               ChangeCompleteItem={this.ChangeDone.bind(this)}
+              DeleteItem={this.SubmitDelete.bind(this)}
           />]      
         }
        
