@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Input, Button, List } from 'antd'
 import store from '../store'
+import {INPUT_CHANGE, CLICKBTN, DELETEITEM} from '../store/actionTypes'
 // import 'antd/dist/antd.css'
 
 
@@ -11,6 +12,7 @@ class TodoList extends Component {
         console.log(store.getState())
         this.inputChangeValue = this.inputChangeValue.bind(this)
         this.storeChange = this.storeChange.bind(this)
+        this.clickBtn = this.clickBtn.bind(this)
         this.state = store.getState()
         store.subscribe(this.storeChange)
     }
@@ -24,13 +26,23 @@ class TodoList extends Component {
                     onChange={this.inputChangeValue}
                     value = {this.state.inputValue}
                 />
-                <Button type='primary'>Add Item</Button>
+                <Button 
+                    type='primary'
+                    onClick={this.clickBtn}
+                >Add Item</Button>
             </div>
             <div style={{margin:'10px',width:'300px'}}>
                 <List
                     bordered
                     dataSource={ this.state.listData } 
-                    renderItem={item=>(<List.Item>{item}</List.Item>)}
+                    renderItem={
+                        (item,index)=>(
+                            <List.Item
+                                onClick = {this.deleteItem.bind(this,index)}
+                            >
+                                {item}
+                            </List.Item>
+                        )}
                 />
             </div>
         </div>
@@ -40,7 +52,7 @@ class TodoList extends Component {
     inputChangeValue(e){
         //console.log(e.target.value)
         const action = {
-            type:'input_change',
+            type:INPUT_CHANGE,
             value:e.target.value
         }
         store.dispatch(action)
@@ -48,6 +60,22 @@ class TodoList extends Component {
    
     storeChange(){
         this.setState(store.getState())
+    }
+
+    clickBtn(){
+        const action={
+            type:CLICKBTN
+        }
+        store.dispatch(action)
+    }
+
+    deleteItem(index){
+        const action={
+            type:DELETEITEM,
+            value:index
+        }
+
+        store.dispatch(action)
     }
 }
  
